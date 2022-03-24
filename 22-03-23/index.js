@@ -37,6 +37,8 @@ console.log("hi HoLLe"[1]);
 // odd 1,3,5,7,9 ..
 console.log(99 % 2);
 
+// New Topic String & Conditions
+
 // Conditional ternary Operator
 // condition ? true : false
 // Frage ? richtig : falsch
@@ -225,6 +227,18 @@ if (myAge < 13) {
   console.log(myFirstName + " is a young adult");
 } else {
   console.log(myFirstName + " is a adult");
+}
+
+// DRY + KISS
+
+if (myAge < 13) {
+  console.log(`${myFirstName} is child`);
+} else if (myAge >= 13 && myAge < 20) {
+  console.log(`${myFirstName} is Teenager`);
+} else if (myAge > 20 && myAge < 30) {
+  console.log(`${myFirstName} is young adult`);
+} else {
+  console.log(`${myFirstName} is adult`);
 }
 
 //myAge >= 13 && myAge < 20 ) //(myAge >=20 && myAge < 30) ) }
