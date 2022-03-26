@@ -37,3 +37,5 @@ function getRandomInt(min, max) {
 
 let result = getRandomInt(5, 10);
 console.log(result);
+
+// Emojis
