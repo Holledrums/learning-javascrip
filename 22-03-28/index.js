@@ -102,3 +102,67 @@ for (let i = 0; i <= 10; ) {
   i += 2;
 }
 console.log(str3);
+
+let str4 = "";
+for (let i = 3; i <= 15; ) {
+  str4 += `${i} `;
+  i += 3;
+}
+console.log(str4);
+
+// ------------------------
+
+// Schleife innerhalb einer Schleife // Nested Loops
+
+for (let i = 0; i <= 10; i++) {
+  console.log("nice");
+  for (let j = 0; j <= 10; j++) {
+    console.log("something");
+  }
+}
+
+for (let i = 1; i <= 10; i++) {
+  // i=1
+  for (j = 1; j <= 10; j++) {
+    //  j=2
+    console.log(`${i} * ${j} = ${i * j}`);
+  }
+  console.log("----------");
+}
+
+//0 1 2 3 0 1 2 3 0 1 2 3
+let str5 = "";
+for (i = 1; i <= 3; i++) {
+  for (j = 0; j <= 3; j++) {
+    str5 += `${j} `;
+  }
+}
+console.log(str5);
+// 1 1 1 |2 2 2| 3 3 3| 4 4 4| 5 5 5
+
+let str6 = "";
+for (i = 1; i <= 5; i++) {
+  for (j = 0; j <= 2; j++) {
+    str6 += `${i} `;
+  }
+}
+console.log(str6);
+
+// +
+// ++
+// +++
+// ++++
+
+let str7 = "";
+for (i = 1; i <= 4; i++) {
+  str7 += "+";
+  console.log(str7);
+}
+
+for (i = 4; i >= 1; i--) {
+  let stern = "";
+  for (j = 1; j <= i; j++) {
+    stern += "*";
+  }
+  console.log(stern);
+}
