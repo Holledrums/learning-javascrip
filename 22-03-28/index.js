@@ -159,10 +159,57 @@ for (i = 1; i <= 4; i++) {
   console.log(str7);
 }
 
+// ****
+// ***
+// **
+// *
+let stern;
 for (i = 4; i >= 1; i--) {
-  let stern = "";
+  stern = "";
   for (j = 1; j <= i; j++) {
     stern += "*";
   }
   console.log(stern);
+}
+for (let i = 4; i >= 0; i--) {
+  console.log("*".repeat(i));
+}
+
+// Addition. Write a program to add up the numbers 1 to 20.
+let sum = 0;
+for (i = 1; i <= 20; i++) {
+  sum += i;
+}
+console.log("sum: ", sum);
+
+//for (i = 0; i <= 20; i++) {
+//  console.log(`${i + 1}`);
+//}
+
+// There are i bottles of beer on the wall. Write a program that will output, "There is 1 bottle of beer on the wall." "There are 2 bottles of beer on the wall" up until there are five bottles.
+
+let bottle = "";
+
+for (i = 1; i <= 4; i++) {
+  if (i == 1) {
+    bottle = `There is ${i} Bottle`;
+  } else {
+    bottle = `There are ${i} Bottles`;
+  }
+  console.log(`${bottle} of Beer`);
+}
+console.log("----------");
+
+for (i = 1; i <= 4; i++) {
+  console.log(
+    i == 1 ? `There is ${i} Bottle of Beer` : `There are ${i} Bottles`
+  );
+}
+
+for (i = 1; i <= 4; i++) {
+  console.log(
+    `There ${
+      i == 1 ? `is ${i} Bottle` : `are ${i} Bottles`
+    } of beer on the Wall`
+  );
 }
