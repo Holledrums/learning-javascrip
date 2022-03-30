@@ -30,8 +30,8 @@ console.log(arr.length);
 
 // indexOf()
 
-console.log("indexOf: ", names.indexOf("Ali"));
-console.log("lastIndexOf: ", names.lastIndexOf("Ali"));
+console.log("indexOf: ", names.indexOf("Ali")); // zählt vom Anfang / -1 gibt an das ein wert nicht vorhanden ist 
+console.log("lastIndexOf: ", names.lastIndexOf("Ali")); // zählt vom ende / -1 gibt an das ein wert nicht vorhanden ist
 
 // unshift() Macht das gegenteil von push() und setz den wert immer an erste Stelle (also 0)
 arr.unshift("hi");
