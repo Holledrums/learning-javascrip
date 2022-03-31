@@ -61,6 +61,24 @@ console.log("trim: ", firstName.trim());
 
 // true false
 
+// and &&
+// true && false => false
+// false && true => false
+// false && false => false
+// true && true => true
+//  or ||
+// true || false => true
+// false || true => true
+// false || false => false
+// true || true => true
+//
+if (1 == 1 && 22 != 2 && 5 == 5 && 2 != 2) {
+  console.log("And OR:", "cool");
+} else {
+  console.log("And OR:", "Nooo");
+}
+// condition ? true : false
+
 let bool = true; // 1 " " "ali" true
 bool = false; // 0 "" null false
 console.log("condition: ", 1 == 1 ? "cool" : "noo"); // == vergleicht nur den Value
@@ -115,3 +133,61 @@ const stringUpp = (str) => {
 };
 
 stringUpp("the quick brown fox");
+
+// 2- Write a JavaScript function that accept a list of country names as input and returns the longest country name as output.
+// longestCountryName(
+//    ["Australia",
+//    "Germany",
+//    "United States of America"]
+//    )
+// Expected output : "United States of America"
+
+// finction, array, length, loops, if/ condition
+
+const longestCountryName = (arr) => {
+  let longestWord = "";
+  for (i = 0; i < arr.length; i++) {
+    if (longestWord.length < arr[i].length) {
+      longestWord = arr[i];
+    }
+  }
+  return console.log(longestWord);
+};
+
+longestCountryName(["Australia", "Germany", "United States of America"]); // Expected output : "United States of America"
+longestCountryName(["Amsterdam", "Paris", "LA"]);
+
+// Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string.
+
+// gegeben: Function (str)
+//          number
+//          includes()  vowel = "AEIOUaeiou"
+//          condition, Loop
+
+const vowelCount = (str) => {
+  let count = 0;
+  const vowel = "AEIOUaeiou";
+  for (i = 0; i < str.length; i++) {
+    if (vowel.includes(str[i])) {
+      count++;
+    }
+  }
+  return console.log(count);
+};
+vowelCount("Halloechen ich bon Holle");
+
+// Hello Alex. Create an array filled with your friends' and family's names. Loop over the array and greet each friend. Bonus: Print the indexes of each item in the array. Examples:
+// [Maria, Mike, Paul, Doven] ➞ expected output: "Hello Maria! Hello Mike! Hello Paul! Hello Doven!
+// old school
+
+//  function array ["Maria", "Mike", "Paul", "Doven"]; output = "", loop
+
+const grüße = (arr) => {
+  let greet = "";
+  for (let i = 0; i < arr.length; i++) {
+    greet += `Hello ${arr[i]}! `;
+  }
+  return console.log(greet);
+};
+
+grüße(["Maria", "Mike", "Paul", "Doven"]);
