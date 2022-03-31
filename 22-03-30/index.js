@@ -63,4 +63,125 @@ console.table(str.split(" ").length); // mit length gib ts die summe der Leerzei
 const text = ["hi", "i", "am", "hadi"];
 console.log(text.join(". "));
 
-//cocat()
+// Beispiel:
+// snake_case ➞ camelCase Create a function toCamelCase() that takes a single string in snake_case and converts it into camelCase.
+// Examples:
+// toCamelCase("hello_world") ➞ "helloWorld"
+// toCamelCase("javascript_is_fun") ➞ "javascriptIsFun"
+
+function toCamelCase(str) {
+  let result = "";
+  let newArr = str.toLowerCase().split("_");
+  for (i = 1; i < newArr.length; i++) {
+    newArr[i] = newArr[i][0].toUpperCase() + newArr[i].substring(1);
+  }
+  result = newArr.join("");
+  return console.log(result);
+}
+
+toCamelCase("hello_world");
+toCamelCase("javascript_is_fun");
+
+// arrow function =>
+
+const toCamelCaseArrow = (str) => {
+  let result = "";
+  let newArr = str.toLowerCase().split("_");
+  for (i = 1; i < newArr.length; i++) {
+    newArr[i] = newArr[i][0].toUpperCase() + newArr[i].substring(1);
+  }
+  result = newArr.join("");
+  return console.log(result);
+};
+toCamelCaseArrow("Was_Geht_ab");
+
+// Old School
+function sum(x, y) {
+  return x + y;
+}
+sum(2, 5);
+
+// Es6 --> New School
+
+const sumArrow = (x, y) => x + y;
+
+sumArrow(3, 3);
+
+console.log(sum, sumArrow);
+
+// Weitere Beispiele
+
+function display(str) {
+  return console.log(str);
+}
+
+const displayArrow = (str) => console.log(str);
+
+// Dictionary. Create a function that takes an initial string and an array of words, and returns a filtered array of the words that start with the same letters as the initial string.
+// Notes:
+// If none of the words match, return an empty array.
+// Keep the filtered array in the same relative order as the original array of words.
+// Examples:
+// dictionary("bu", ["button", "breakfast", "border"]) ➞ ["button"]
+// dictionary("tri", ["triplet", "tries", "trip", "piano", "tree"]) ➞ ["triplet", "tries", trip"]
+// dictionary("beau", ["pastry", "delicious", "name", "boring"]) ➞ []
+
+const dictionary = (str, arr) => {
+  let resultArr = [];
+  let stringLength = str.length;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].substring(0, str.length) == str) {
+      resultArr.push(arr[i]);
+    }
+  }
+  return console.log(resultArr);
+};
+
+// function dictionary(str, arr) {
+//   let outputArr = []
+//   for (i = 0; i == arr.substring(0,1) i++) {
+//
+//  }
+//return console.log(arr)
+//}
+
+dictionary("bu", ["button", "breakfast", "border"]);
+dictionary("tri", ["triplet", "tries", "trip", "piano", "tree"]);
+dictionary("beau", ["pastry", "delicious", "name", "boring"]);
+
+// Hello Alex. Create an array filled with your friends' and family's names. Loop over the array and greet each friend. Bonus: Print the indexes of each item in the array. Examples:
+// [Maria, Mike, Paul, Doven] ➞ expected output: "Hello Maria! Hello Mike! Hello Paul! Hello Doven!
+// old school
+function greeting(arr) {
+  let greet = "";
+  for (i = 0; i < arr.length; i++) {
+    greet += `Hello ${arr[i]}! `;
+  }
+  return console.log(greet);
+}
+// Es6
+const greeting2 = (arr) => {
+  let greet = "";
+  for (i = 0; i < arr.length; i++) {
+    greet += `Hello ${arr[i]}! `;
+  }
+  return console.log(greet);
+};
+
+greeting(["Maria", "Mike", "Paul", "Doven"]);
+greeting2(["Maria", "Mike", "Paul", "Doven"]);
+
+// sumOfNumbers. Create a program that adds up the numbers in an array (of at least 3 numbers). Bonus: Print to screen both the sum and the product of these numbers.
+
+// gegeben: function; array mit 3 Numbers; sum + produkt
+
+const sumOfNum = (arr) => {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+
+  return console.log(sum);
+};
+
+sumOfNum([1, 2, 3]);
