@@ -16,7 +16,7 @@ function calculateDogAge(dogAge) {
   console.log(`Your human is ${7 / dogAge} years old in doggi years!`);
 }
 
-calculateDogAge(5);
+calculateDogAge(5, 3);
 calculateDogAge(8);
 calculateDogAge(9);
 console.log("------------------------");
@@ -37,16 +37,17 @@ console.log("------------------------");
 // const ageMax 80 years time 356 day
 // log "You will need NN to last you until the ripe old age of X"
 
-function calculateSupply(age, perDay, ageMax) {
+function calculateSupply(age, perDay) {
+  let ageMax = 80;
   let supply = (ageMax - age) * 365 * perDay;
-  console.log(
+  return console.log(
     `You will need ${supply} to last you until the ripe old age of ${ageMax}`
   );
 }
 
-calculateSupply(30, 3, 80);
-calculateSupply(36, 2, 80);
-calculateSupply(54, 5, 80);
+calculateSupply(30, 3);
+calculateSupply(36, 2);
+calculateSupply(54, 5);
 
 console.log("------------------------");
 
