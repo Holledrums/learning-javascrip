@@ -1,13 +1,44 @@
 // AEIOU:
-// Vowels. Create a function that takes a string in its parameters and counts the number of vowels (i.e. in English, “a, e, i, o, u”) in the string.
-// i.e. findVowels(“this is a string”) ➞ 4
+// Vowels. Create a function that takes a string in its parameters and counts the number of vowels (i.e. in English, "a, e, i, o, u") in the string.
+// i.e. findVowels("this is a string") ➞ 4
+
+// function(str) // let vowelsArr = [a, e, i,o,u]
+
+function findVowels(str) {
+  let numVowels = 0;
+  const vowels = ["a", "e", "i", "o", "u"];
+  for (i = 0; i < str.length; i++) {
+    if (vowels.includes(str.toLowerCase()[i])) {
+      numVowels += 1;
+    }
+  }
+  console.log(numVowels);
+}
+findVowels("this is a string");
+findVowels("dAnke SAlem für deine Hilfe");
 
 // No Duplicates!
+
 // A set is a collection of unique items. A set can be formed from an array by removing all duplicate items. Create a program which transforms an array into a set of unique values. See the examples below. Example:
 // [1, 4, 4, 7, 7, 7] ➞ [1, 4, 7]
 // [1, 6, 6, 9, 9] ➞ [1, 6, 9]
 // [2, 2, 2, 2, 2, 2] ➞ [2]
 // [5, 10, 15, 20, 25] ➞ [5, 10, 15, 20, 25]
+
+function creatNewArr(arr) {
+  let newArr = [];
+  for (i = 0; i < arr.length; i++) {
+    if (newArr.indexOf(arr[i]) == -1) {
+      newArr.push(arr[i]);
+    }
+  }
+  return console.log(newArr);
+}
+
+creatNewArr([1, 4, 4, 7, 7, 7]);
+creatNewArr([1, 6, 6, 9, 9]);
+creatNewArr([2, 2, 2, 2, 2, 2]);
+creatNewArr([5, 10, 15, 20, 25]);
 
 // is Palindrome AKA word that reads the same backward or forward.
 

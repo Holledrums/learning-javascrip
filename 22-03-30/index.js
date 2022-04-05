@@ -38,6 +38,19 @@ function cleanUp(arr) {
 cleanUp([1, 4, 4, 7, 7, 7]);
 cleanUp([1, 6, 6, 9, 9]);
 
+// function clearUp(arr) {
+//    let result = [];
+//    for (let i = 0; i < arr.length; i++) {
+//    if (!result.includes(arr[i])) {
+// ! ausrufezeichen bedeutet NOT
+//    result.push(arr[i]);
+//    }
+//    }
+//    return console.log(result);
+//    }
+
+//    clearUp([1, 4, 4, 7, 7, 7]);
+
 // ARRAYS && LOOPS
 
 // Splice() - Löscht die Elemente aus dem Arry
