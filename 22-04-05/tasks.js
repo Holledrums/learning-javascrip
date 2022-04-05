@@ -44,6 +44,15 @@ creatNewArr([5, 10, 15, 20, 25]);
 
 // Write a program to check whether a word is a palindrome or not. Note: a palindrome is a word, phrase, or sequence that reads the same backwards as forwards, e.g. madam or tarrattarrat
 
+// isPalindrom function argument str, true / false array reverse()
+
+const isPalindrome = (str) =>
+  str.toLowerCase() == str.toLowerCase().split("").reverse().join("");
+
+console.log(isPalindrome("lagerregal"));
+console.log(isPalindrome("Hadi"));
+console.log(isPalindrome("tarrattarrat"));
+
 // This question has 2 parts
 
 // Part a) write a function that takes in a number and does a console.log("Even 10!") if the number is evenly divisable by 10. Examples:
