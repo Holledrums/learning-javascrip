@@ -118,7 +118,7 @@ function passwortGen() {
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   let passwort = "";
   let passwortLaenge = 8;
-  for (i = 0; i < passwortLaenge; i++) {
+  for (let i = 0; i < passwortLaenge; i++) {
     passwort += charList[Math.floor(Math.random() * charList.length)];
   }
   console.log(passwort);
