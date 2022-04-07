@@ -110,17 +110,27 @@ console.log("------------");
 // function(2, 8) The function prints 2 4 8 16 32 64 128 256. Prints 8 exponential values of 2.
 
 function exponential(x, y) {
-  let numExpo = [];
-  for (let i = 0; i <= y; i++) {
-    numExpo[i] = Math.pow(x, i);
+  if (typeof x != "number") {
+    return console.log("x is not a number");
+  }
+  if (typeof y != "number") {
+    return console.log("y is not a number");
+  }
+  for (let i = 1; i <= y; i++) {
+    let result = Math.pow(x, i);
+    console.table(result);
   }
 
-  return console.log(numExpo.splice(1));
+  //let numExpo = [];
+  //for (let i = 0; i <= y; i++) {
+  //  numExpo[i] = Math.pow(x, i);
+  //}
+
+  // return console.log(numExpo.splice(1));
 }
 
 exponential(2, 8);
-exponential(3, 8);
-exponential(1, 8);
+exponential(3, 5);
 console.log("------------");
 // ------------------------
 // Fruits
@@ -129,8 +139,25 @@ console.log("------------");
 let fruit = "apple";
 
 function printFavoriteFruit() {
-  let x = fruit;
+  // let x = fruit; --> wir brauchen diese Variable nicht innerhalb der Funktion, sondern holen sie uns von ausserhalb.
 
-  console.log(`My favorite fruit is: ${x}`);
+  console.log(`My favorite fruit is: ${fruit}`);
 }
-console.log(printFavoriteFruit());
+
+printFavoriteFruit();
+
+// scoping/scope
+
+function scopeTest() {
+  let i = 1; // durch "let" i ist nur innerhalb der Funktion verfügbar
+}
+scopeTest();
+
+// console.log(i);
+
+function scopeTest2() {
+  i = 2; // Ohne let ist i global verfügbar, wird in der regel so aber nicht angewendet.
+}
+scopeTest2();
+
+console.log(i);
