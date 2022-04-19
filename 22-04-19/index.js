@@ -150,4 +150,82 @@ console.log("---------------------------------------");
 // removeNumbers("12ma23tt") ➞ "matt"
 // removeNumbers("e1d2a3b4i5t6") ➞ "edabit"
 
+function removeNumbers(str) {
+  let result = "";
+  for (let i = 0; i < str.length; i++) {
+    if (isNaN(str[i])) {
+      result += str[i];
+    }
+  }
+  return console.log(result);
+}
+
+removeNumbers("mubashir1");
+removeNumbers("12ma23tt");
+removeNumbers("e1d2a3b4i5t6");
+
+console.log("---------------------------------------");
+
+//11.
+//Check if One Array can be Nested in Another
+//Create a function that returns true if the first array can be nested inside the second.
+
+// arr1 can be nested inside arr2 if:
+// arr1's min is greater than arr2's min.
+// arr1's max is less than arr2's max.
+
+// Examples
+// canNest([1, 2, 3, 4], [0, 6]) ➞ true
+// canNest([3, 1], [4, 0]) ➞ true
+// canNest([9, 9, 8], [8, 9]) ➞ false
+// canNest([1, 2, 3, 4], [2, 3]) ➞ false
+
+function canNest(a, b) {
+  let minA = a[0];
+  let minB = b[0];
+  let maxA = a[0];
+  let maxB = b[0];
+
+  for (let i = 0; i < a.length; i++) {
+    if (minA > a[i]) {
+      minA = a[i];
+    } else if (maxA < a[i]) {
+      maxA = a[i];
+    }
+  }
+  for (let j = 0; j < b.length; j++) {
+    if (minB > b[j]) {
+      minB = b[j];
+    } else if (maxB < b[j]) {
+      maxB = b[j];
+    }
+  }
+  minA > minB && maxA < maxB ? console.log("true") : console.log("false");
+}
+canNest([1, 2, 3, 4], [0, 6]);
+canNest([3, 1], [4, 0]);
+canNest([9, 9, 8], [8, 9]);
+canNest([1, 2, 3, 4], [2, 3]);
+
+console.log("---------------------------------------");
+
+//12.
+//Tuck in Array
+//Create a function that takes two arrays and insert the second array in the middle of the first array.
+//Examples
+// tuckIn([1, 10], [2, 3, 4, 5, 6, 7, 8, 9]) ➞ [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// tuckIn([15,150], [45, 75, 35]) ➞ [15, 45, 75, 35, 150]
+// tuckIn([[1, 2], [5, 6]], [[3, 4]]) ➞ [[1, 2], [3, 4], [5, 6]]
+
+console.log("---------------------------------------");
+
+//13.
+//Number Split
+//Given a number, return an array containing the two halves of the number. If the number is odd, make the rightmost number higher.
+//Examples
+// numberSplit(4) ➞ [2, 2]
+// numberSplit(10) ➞ [5, 5]
+// numberSplit(11) ➞ [5, 6]
+// numberSplit(-9) ➞ [-5, -4]
+
 console.log("---------------------------------------");
