@@ -7,6 +7,21 @@
 // isFourLetters(["Tomato", "Corn", "Lettuce"]) ➞ ["Corn"]
 // isFourLetters(["Dog", "Cat", "Deer"]) ➞ ["Deer"]
 
+const isFourLetters = (str) => {
+  let newArr = [];
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i].length == 4) {
+      newArr.push(str[i]);
+    }
+  }
+  return console.log(newArr);
+};
+
+isFourLetters(["John", "James", "Jack", "Jeanne"]);
+isFourLetters(["Tomato", "Corn", "Lettuce"]);
+isFourLetters(["Dog", "Cat", "Deer"]);
+
 console.log("---------------------------------------");
 
 //06
@@ -22,6 +37,23 @@ console.log("---------------------------------------");
 // amplify(3) ➞ [1, 2, 3]
 // amplify(25) ➞ [1, 2, 3, 40, 5, 6, 7, 80, 9, 10, 11, 120, 13, 14, 15, 160, 17, 18, 19, 200, 21, 22, 23, 240, 25]
 
+const amplify = (num) => {
+  let newArr = [];
+  for (let i = 1; i <= num; i++) {
+    if (i % 4 != 0) {
+      newArr.push(i);
+    } else {
+      newArr.push(i * 10);
+    }
+  }
+
+  return console.log(newArr);
+};
+
+amplify(4);
+amplify(3);
+amplify(25);
+
 console.log("---------------------------------------");
 
 //07
@@ -33,6 +65,15 @@ console.log("---------------------------------------");
 // unique([0, 0, 0.77, 0, 0]) ➞ 0.77
 // unique([0, 1, 1, 1, 1, 1, 1, 1]) ➞ 0
 
+function unique(num) {
+  for (let i = 0; i < num.length; i++) {
+    if (num.indexOf(num[i]) == num.lastIndexOf(num[i]))
+      return console.log(num[i]);
+  }
+}
+unique([3, 3, 3, 7, 3, 3]);
+unique([0, 0, 0.77, 0, 0]);
+unique([0, 1, 1, 1, 1, 1, 1, 1]);
 console.log("---------------------------------------");
 
 //08.
@@ -43,6 +84,30 @@ console.log("---------------------------------------");
 // hackerSpeak("javascript is cool") ➞ "j4v45cr1pt 15 c00l"
 // hackerSpeak("programming is fun") ➞ "pr0gr4mm1ng 15 fun"
 // hackerSpeak("become a coder") ➞ "b3c0m3 4 c0d3r"
+
+const hackerSpeak = (string) => {
+  let newString = "";
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] == "a") {
+      newString += 4;
+    } else if (string[i] == "e") {
+      newString += 3;
+    } else if (string[i] == "i") {
+      newString += 1;
+    } else if (string[i] == "o") {
+      newString += 0;
+    } else if (string[i] == "s") {
+      newString += 5;
+    } else {
+      newString += string[i];
+    }
+  }
+  return console.log(newString);
+};
+
+hackerSpeak("javascript is cool");
+hackerSpeak("programming is fun");
+hackerSpeak("become a coder");
 
 console.log("---------------------------------------");
 
@@ -56,6 +121,22 @@ console.log("---------------------------------------");
 // isSymmetrical(44444444) ➞ true
 // isSymmetrical(9939) ➞ false
 // isSymmetrical(1112111) ➞ true
+
+const isSymmetrical = (num) => {
+  let text = num.toString();
+  let newArr = text.split("");
+
+  if (text == newArr.reverse().join("")) {
+    return console.log("true");
+  } else {
+    return console.log("false");
+  }
+};
+isSymmetrical(7227);
+isSymmetrical(12567);
+isSymmetrical(44444444);
+isSymmetrical(9939);
+isSymmetrical(1112111);
 
 console.log("---------------------------------------");
 
