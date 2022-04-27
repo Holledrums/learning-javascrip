@@ -42,6 +42,31 @@ const countLetter = (str) => {
 };
 
 console.log(countLetter("ABC"));
+console.log("----------------");
+
+const scrabble = [
+  { tile: "N", score: 1 },
+  { tile: "K", score: 5 },
+  { tile: "Z", score: 10 },
+  { tile: "X", score: 8 },
+  { tile: "D", score: 2 },
+  { tile: "A", score: 1 },
+  { tile: "E", score: 1 },
+];
+// Scrabble OLDSCHOOL : array -> loop, function, counter +=
+function sumOfTheScrabble(arr) {
+  let result = 0;
+  for (let i = 0; i < arr.length; i++) {
+    result += arr[i].score;
+  }
+  return result;
+}
+console.log(sumOfTheScrabble(scrabble));
+
+// Scrabble NEWSCHOOL
+const sumOfScore = (arr) => arr.reduce((result, cur) => result + cur.score, 0);
+console.log(sumOfScore(scrabble));
+
 // map
 
 // filter

@@ -15,7 +15,7 @@ const recipe = {
 };
 console.log(recipe.title);
 console.log("Serves: ", recipe.serves);
-console.log("Ingredien:");
+console.log("Ingrediens:");
 for (const index of recipe.ingredients) {
   console.log(index);
 }
@@ -36,13 +36,47 @@ const bookList = [
 console.log("------------");
 // Iterate through the array of books. For each book, log the book title and book author like so: "The Hobbit by J.R.R. Tolkien".
 
-for (const index of bookList) {
-  index =
-    bookList.alreadyRead == true
-      ? console.log(`You already read ${bookList.titel} by ${bookList.author}`)
-      : console.log(
-          `You still need to read ${bookList.titel} by ${bookList.author}`
-        );
+for (const book of bookList) {
+  console.log(`${book.titel} by ${book.author}`);
 }
 
+console.log("------------");
+
+for (const book of bookList) {
+  book.alreadyRead
+    ? console.log(`You already read ${book.titel} by ${book.author}`)
+    : console.log(`You still need to read ${book.titel} by ${book.author}`);
+}
+console.log("------------");
+//DRY // KISS
+for (const book of bookList) {
+  console.log(
+    book.alreadyRead ? `You already read` : `You still need to read`,
+    `${book.titel} by ${book.author}`
+  );
+}
+console.log("------------");
+
 // Now use an if/else statement to change the output depending on whether you read it yet or not. If you read it, log a string like 'You already read "The Hobbit" by J.R.R. Tolkien', and if not, log a string like 'You still need to read "The Lord of the Rings" by J.R.R. Tolkien.'
+
+// Get Names. Create a function that takes an array of objects containing students' names e.g. {name: "John"}, and returns an array of just student names.
+// Example:
+// getNames([{ name: "Jane" },
+//        { name: "Jack" },
+//        { name: "John" }
+//    ])
+// ➞ ["Jane", "Jack", "John"]
+
+const students = [{ name: "Jane" }, { name: "Jack" }, { name: "John" }];
+const resultArr = [];
+for (const student of students) {
+  resultArr.push(student.name);
+}
+console.log(resultArr);
+console.log("------------");
+
+// mit map
+
+const getNames = students.map((student) => student.name);
+
+console.log(getNames);
