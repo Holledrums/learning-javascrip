@@ -24,7 +24,7 @@ console.log("------------------");
 
 // Is John older than Mark? Declare a variable with a boolean value and print the following to the console eg. "John is older than Mark: true"
 
-let olderAge = true;
+let olderAge = ageJohn > ageMark;
 console.log(`John is older than Mark: ${olderAge}`);
 console.log("------------------");
 // Declare a variable called "str". Do not assign a value. Print str's data type to the console.
@@ -38,10 +38,12 @@ console.log(typeof str);
 console.log("------------------");
 // Print the last character of str's string to the console.
 
-console.log(str.charAt(11));
+console.log(str.charAt(str.length - 1));
 console.log("------------------");
 // Print the length of str to the console, as well as the data type of str's length.
-console.log(str.length, typeof str.length);
+console.log(
+  `str length is: ${str.length}, str.Datatype is: ${typeof str.length}`
+);
 console.log("------------------");
 // Declare three variables: "goals", "penalties", "injuries". Assign numbers to each of the variables. Check if the variable values are equal or not (e.g. console.log(goals == penalties);). Do this for each possibility (goals, penalties) (goals, injuries), (penalties, injuries). Then, print the data type of this check to the console.
 
@@ -49,9 +51,11 @@ let goals = 20;
 let penalties = 5;
 let injuries = 10;
 
-console.log(goals == penalties); // typeof boolean
-console.log(goals == injuries); // typeof boolean
-console.log(injuries == penalties); // typeof boolean
+console.log("goals == penalties", goals == penalties); // typeof boolean
+console.log("goals == injuries", goals == injuries); // typeof boolean
+console.log("injuries == penalties", injuries == penalties); // typeof boolean
+let typeOfGoals = goals == penalties;
+console.log(typeof typeOfGoals);
 console.log("------------------");
 // What is the type of Infinity? Comment your answer. Print the type of infinity to the console.
 

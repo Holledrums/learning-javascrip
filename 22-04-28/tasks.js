@@ -29,11 +29,9 @@ console.log("---------------------");
 // console.log(alphabetize_string("United States"));
 // //"SUadeeinsttt"
 
-const alphabetize_string = (str) => {
-  return str.split("").sort().join("");
-};
+const alphabetizeString = (str) => str.split("").sort().join("").trim();
 
-console.log(alphabetize_string("United States"));
+console.log(`"${alphabetizeString("United States")}"`);
 
 console.log("---------------------");
 // Write a JavaScript function to sort the following array of objects by title value.
@@ -46,6 +44,11 @@ var library = [
     libraryID: 3245,
   },
 ];
+
+const sorted = (arr) => arr.sort((a, b) => (a.title > b.title ? 1 : -1));
+
+console.table(sorted(library));
+
 //sorted
 /*/* {
       author: "Suzanne Collins",
@@ -62,9 +65,18 @@ var library = [
     }]*/
 
 //   Write a JavaScript function to fill an array with values (numeric, string with one character) on supplied bounds.
-// console.log(num_string_range("a", "z", 2));
+// console.log(numStringRange("a", "z", 2));
 // // ["a", "c", "e", "g", "i", "k", "m", "o", "q", "s", "u", "w", "y"]
 
+const numStringRange = (start, end, steps) => {
+  let resultArr = [];
+  for (let i = start.charCodeAt(0); i < end.charCodeAt(0); i++) {
+    resultArr.push(String.fromCharCode(i));
+    i += steps;
+  }
+  return console.table(resultArr);
+};
+console.log(numStringRange("a", "z", 1));
 // Zodiac sign, write a function that tells the user his/her Zodiac sign. The user should enter only his birthday like dd-mm-yy
 // for farther information check https://en.wikipedia.org/wiki/Zodiac
 // Examples:
@@ -88,3 +100,12 @@ data = [
   { signName: "Capricorn", from: "1222" },
   { signName: "Not real day!", from: "1232" },
 ];
+
+const zodiac = (str) => {
+  let result = "";
+
+  return console.log(result);
+};
+
+zodiac("14-02-2002");
+zodiac("04-09-1986");
