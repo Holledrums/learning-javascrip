@@ -48,3 +48,32 @@ for (let i = 0; i < 10; i++) {
   }
   console.log(i);
 }
+
+// switch
+let color = "blue";
+// () [] {}
+let resultText = "";
+
+switch (color) {
+  case "blue":
+  case "lightBlue":
+    // do something
+    resultText = `this is ${color}`;
+    break;
+  case "green":
+    // do something
+    resultText = `this is ${color}`;
+    break;
+  case "black":
+    // do something
+    resultText = `this is ${color}`;
+    break;
+  case "red":
+    // do something
+    resultText = `this is ${color}`;
+    break;
+  default:
+    resultText = "sorry this color is not on your list";
+}
+
+console.log(resultText);
