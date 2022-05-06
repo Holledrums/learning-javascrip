@@ -13,6 +13,7 @@ function countDown(num) {
 }
 countDown(3);
 console.log("----------MainNAv----------");
+
 const mainNavTree = [
   {
     title: "Home",
@@ -44,4 +45,17 @@ const mainNavTree = [
   },
 ];
 
-const mainNav = () => {};
+// 1. aufruf mit dem Hauptnav
+// 2. iterieren über einträge
+// 3. wenn der eintrag keine Kinder hat => ausgabe
+// 4. wenn der eintrag kinder hat, ausgabe + recursiver aufruf der Funktion mit den Kindern als argument
+
+const mainNav = (arr, level = 0) => {
+  for (let i = 0; i < arr.length; i++) {
+    console.log("\t".repeat(level), `=> ${arr[i].title} \n`);
+    if (arr[i].hasOwnProperty("children")) {
+      mainNav(arr[i].children, level + 1);
+    }
+  }
+};
+mainNav(mainNavTree);
