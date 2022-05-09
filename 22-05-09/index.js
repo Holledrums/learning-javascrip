@@ -98,17 +98,17 @@ Output: $30000*/
   if (age >= retire) {
     return "sorry, you should enjoy your retirement";
   } else {
+    let monthlySaved = (saves * income) / 100;
+    let timeToRetire = retire - age;
+    let totalSaved = (saves * (income * 12 * timeToRetire)) / 100;
+
     console.log(
-      `You are ${age} and you need to work ${
+      `You are ${age} and you need to work ${timeToRetire} more years. you are currently saving ${monthlySaved}, per month. so after ${
         retire - age
-      }. you are currently saving ${
-        (saves * income) / 100
-      }, per month. so after ${retire - age} years of work you will save ${
-        (saves * (income * 12 * (retire - age))) / 100
-      }`
+      } years of work you will save ${totalSaved}`
     );
   }
-})(36, 60, 2600, 10);
+})(36, 60, 2600, 20);
 
 /* const retirePay = (
   (age, retire, income, saves) => () =>
@@ -116,3 +116,28 @@ Output: $30000*/
 )(40, 65, 2000, 5);
 
 console.log(retirePay()); */
+
+// Write a function that checks if a user give a correct German bank account
+// Example:
+// DE3333 -> this is not a complete bank account please check
+// QQ -> `this is not a bank account`
+// DE33nn54637 -> this is a wrong bank account
+// DE -> this is correct, I'll take your money :leichtes_lächeln:
+
+const bankAccount = (str) => {
+  if (str.substring(0, 2) != "DE") {
+    return `this is not a bank account`;
+  }
+  if (str.substring(2) == isNaN()) {
+    return `this is a wrong bank account`;
+  }
+  if (str.length != 22) {
+    return `This is not a complete bank account`;
+  } else {
+    return `this is correct, I'll take your money `;
+  }
+};
+console.log(bankAccount("DE25102556985689533254"));
+console.log(bankAccount("DE25102556985"));
+console.log(bankAccount("QQ25102556985689533254"));
+console.log(bankAccount("DE33nn54637"));
