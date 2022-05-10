@@ -36,16 +36,17 @@ console.log(calculatorNew("49/7*2-3"));
 // de343ee -> this is not correct
 
 const visaOrMaster = (num) => {
-  if (num.substring(0) == "4") {
+  if (num.substring(0) == "4" && num.length == 15) {
     return `this is Visa card, I need your money`;
   }
-  if (num.substring(2) == isNaN()) {
-    return `this is a wrong bank account`;
+  if (num.substring(0) == "5" && num.length == 15) {
+    return `this is Master card, I need your money`;
   }
-  if (num.length != 22) {
-    return `This is not a complete bank account`;
-  } else {
-    return `this is correct, I'll take your money `;
+  if (num.substring(0) == "3" && num.length == 14) {
+    return `this is AmEpx, I need your money`;
+  }
+  if (num.substring(0) == isNaN() || num.length <= 13) {
+    return `this is not correct`;
   }
 };
 
@@ -59,3 +60,4 @@ console.log(visaOrMaster("de343ee"));
 // 030-1247893 -> I'll call now
 // 333-332222 -> this is not a phone number
 // 030-33 -> This is not complete !
+function name(params) {}
