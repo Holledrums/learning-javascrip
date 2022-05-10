@@ -109,12 +109,38 @@ const userCarData = {
     }
     return `Our Car ${this.model} price : ${this.price}€`;
   },
+
+  set fullCarName(str) {
+    let arr = str.split(" ");
+    this.year = arr[0];
+    this.model = arr[1];
+    this.speed = arr[2];
+    this.price = arr[3];
+  },
 };
 
-console.log(userCarData.fullCarName);
-
 // getter
-
+console.log(userCarData.fullCarName);
 // setter
 
+userCarData.fullCarName = "2022 LUpo 300 24000";
+console.log(userCarData.fullCarName);
+userCarData.fullCarName = "2019 Q5 300 44000";
+console.log(userCarData.fullCarName);
+
 // constructor our own
+
+function Person(name, age, add) {
+  this.name = name;
+  this.age = age;
+  this.add = add;
+  this.printOut = function () {
+    console.log(
+      `Hey my name is ${this.name}, I am ${this.age} Years old and live in ${this.add}`
+    );
+  };
+}
+const holgerData = new Person("Holger", 36, "Leipzig");
+const aliData = new Person("Ali", 22, "LA");
+holgerData.printOut();
+aliData.printOut();
