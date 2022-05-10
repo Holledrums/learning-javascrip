@@ -97,6 +97,22 @@ const newPPlCopy = ppl.map(
     `);
   }
 );
+
+const userCarData = {
+  year: 2020,
+  model: "A7",
+  speed: 250,
+  price: 75000,
+  get fullCarName() {
+    if (this.model == undefined || this.price < 5000) {
+      return `This data is not ready`;
+    }
+    return `Our Car ${this.model} price : ${this.price}€`;
+  },
+};
+
+console.log(userCarData.fullCarName);
+
 // getter
 
 // setter
