@@ -36,17 +36,16 @@ console.log(calculatorNew("49/7*2-3"));
 // de343ee -> this is not correct
 
 const visaOrMaster = (num) => {
-  if (num.substring(0) == "4" && num.length == 15) {
-    return `this is Visa card, I need your money`;
-  }
-  if (num.substring(0) == "5" && num.length == 15) {
-    return `this is Master card, I need your money`;
-  }
-  if (num.substring(0) == "3" && num.length == 14) {
-    return `this is AmEpx, I need your money`;
-  }
-  if (num.substring(0) == isNaN() || num.length <= 13) {
+  if (isNaN(num) || num.length <= 13) {
     return `this is not correct`;
+  } else if (num.length == 15) {
+    if (num[0] == "4") {
+      return `this is Visa card, I need your money`;
+    } else if (num[0] == "5") {
+      return `this is Master card, I need your money`;
+    }
+  } else if (num[0] == "3" && num.length == 14) {
+    return `this is AmEpx, I need your money`;
   }
 };
 
