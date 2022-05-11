@@ -78,3 +78,41 @@ const zodiac = (str) => {
 
 zodiac("14-02-2002");
 zodiac("04-09-1986");
+
+// Creat a constructor function that receive product details (productName,prise,inventory) thin build a method to display this data in clear outputted form
+// build two product using your constructor function
+// i.e : (Pepsi,2.33,2232) -> Form item Pepsi selling prise 2.33€. we have 2232 in our store
+
+function Product(productName, price, inventory) {
+  this.productName = productName;
+  this.price = price;
+  this.inventory = inventory;
+  this.showData = function () {
+    return `from item ${this.productName} selling prise ${this.price}€. we have ${this.inventory} in our store`;
+  };
+}
+
+const pepsiData = new Product("Pepsi", 2.33, 2232);
+
+console.log(pepsiData.showData());
+
+// get & set, create a car object that uses getter and setter method to get and set the following (modelName,modelNumber,enginCapacity)
+// first get the data
+// then set the data
+
+const newCar = {
+  get newCarData() {
+    return `Our Car ${this.modelName} with Nr ${this.modelNumber} has ${this.enginCapacity} horsepower.`;
+  },
+  set newCarData(str) {
+    let arr = str.split(" ");
+    this.modelName = arr[0];
+    this.modelNumber = arr[1];
+    this.enginCapacity = arr[2];
+  },
+};
+// getter
+console.log(newCar.newCarData);
+console.log("------------");
+newCar.newCarData = "VW-UP 458up 54";
+console.log(newCar.newCarData);
