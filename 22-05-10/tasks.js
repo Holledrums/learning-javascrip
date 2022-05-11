@@ -54,9 +54,35 @@ console.log(visaOrMaster("512178679036597"));
 console.log(visaOrMaster("34121786790365"));
 console.log(visaOrMaster("11111"));
 console.log(visaOrMaster("de343ee"));
-
+console.log("-----------------");
 // Phone number, Write a function that checks if a user give a correct German (landline Berlin 030) phone number
 // 030-1247893 -> I'll call now
 // 333-332222 -> this is not a phone number
 // 030-33 -> This is not complete !
-function name(params) {}
+
+const phoneCheck = (str) => {
+  if (isNaN(str)) {
+    return console.log("WTF not a number in Europe!");
+  }
+  let vorWahl = str.substring(0, 2);
+  if (str.length != 10) {
+    return console.log("this is not complete");
+  }
+  switch (vorWahl) {
+    case "01":
+      console.log("Handynummer");
+      break;
+    case "02":
+      console.log("Nordrheinwestfalen");
+      break;
+    case "03":
+      console.log("Berlin, Brandenburg, Saschsen, Thüringen");
+      break;
+    case "04":
+      console.log("Schleswig-Holstein");
+      break;
+    default:
+      console.log("check one more time");
+  }
+};
+phoneCheck("0341599852");

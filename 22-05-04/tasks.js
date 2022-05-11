@@ -10,7 +10,7 @@
 
 // arrowFunc(true) ➞ true
 
-const arrowFunc = (arg) => console.log(arg);
+const arrowFunc = (arg) => arg;
 arrowFunc(3);
 arrowFunc("3");
 arrowFunc(true);
@@ -26,8 +26,7 @@ console.log("----------------");
 
 // calculateFuel(3) ➞ 100
 
-const calculateFuel = (num) =>
-  num * 10 >= 100 ? console.log(num * 10) : console.log(100);
+const calculateFuel = (num) => (num * 10 >= 100 ? num * 10 : 100);
 calculateFuel(15);
 calculateFuel(23.5);
 calculateFuel(3);
@@ -41,10 +40,10 @@ console.log("----------------");
 
 // points(38, 8) ➞ 100
 
-const points = (x, y) => console.log(x * 2 + y * 3);
-points(1, 1);
-points(7, 5);
-points(38, 8);
+const points = (x, y) => x * 2 + y * 3;
+console.log(points(1, 1));
+console.log(points(7, 5));
+console.log(points(38, 8));
 
 // Create a function that takes an array containing only numbers and return the first element.
 
