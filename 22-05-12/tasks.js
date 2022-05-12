@@ -74,3 +74,18 @@ console.log(minMax([1]));
 // emailCheck("Hi@hh.co") -> true
 // emailCheck("Hihh.co") -> false
 // emailCheck("@hh.co") -> false
+
+const emailCheck = (num) => {
+  let at, dot;
+  for (let i = 0; i < num.length; i++) {
+    if (num[i] === "@") at = i;
+    if (num[i] === ".") dot = i;
+  }
+  if (at > 0 && dot > 0) {
+    return `${num} is cool mailaddress`;
+  } else {
+    return `${num} is not a valid mail adress`;
+  }
+};
+console.log(emailCheck("Hi@hh.co"));
+console.log(emailCheck("Hihh.co"));
