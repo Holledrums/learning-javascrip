@@ -83,3 +83,46 @@ const isPandigital = (num) => {
 // const isPandigital2 = (num) => new Set(num.toString().split("")).size === 10;
 console.log(isPandigital(0123456789));
 console.log(isPandigital(98140723568910));
+
+const arr1 = ["name", "age", "country"];
+const arr2 = ["Tom", 30, "Chile"];
+
+const obj = {};
+
+arr1.forEach((element, index) => {
+  obj[element] = arr2[index];
+});
+
+console.log(obj);
+
+/*B-3. Create Grid (10 Points)
+Create a function createGrid
+
+It should return a nested array representing a 2D grid, filled with a char.
+
+It should accept two arguments:
+
+size (which determines the number of nested arrays and the number of elements in each nested array) and
+char (which determines the characters in each nested array).
+Call your function and print the return value to the console.
+
+Example and expected output:
+
+console.log(createGrid(3, "*"));
+[ [ '*', '*', '*' ], [ '*', '*', '*' ], [ '*', '*', '*' ] ]  */
+
+const createGrid = (size, char) => {
+  let newArr = Array(size);
+
+  for (let i = 0; i < char.length; i++) {
+    newArr[i] += size;
+  }
+  return newArr;
+};
+
+console.log(createGrid(3, "*"));
+console.log(createGrid(3, "**"));
+
+/*l
+  }
+  return newArr; */
