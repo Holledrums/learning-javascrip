@@ -2,25 +2,84 @@
 // Example
 let first = { firstName: "John", lastName: "Vooo" };
 let last = { lastName: "Smith" };
+
+const createObj = (obj1, obj2) => {
+  return { ...obj1, ...obj2 };
+};
+
+console.log(createObj(first, last));
+
 // Expected output:
 // {firstName: "John", lastName: "Smith"}
+console.log("-------------------");
+
 // 4. Switch Keys and Values. Create a function to get a copy of an object. The copy must switch the keys and values.
 // Example:
-// let person = {
-//   name: "John",
-//   job: "teacher"
-// }
+let person = {
+  name: "John",
+  job: "teacher",
+};
+
+/*const flipKey = (obj) => {
+  return Object.keys(obj).reduce((flip, key) => {
+    flip[obj[key]] = key;
+    return flip;
+  }, {});
+};*/
+
+const flipKey = (obj) => {
+  let flip = {};
+  for (let prop in obj) {
+    flip[obj[prop]] = prop;
+  }
+  return flip;
+};
+console.log(flipKey(person));
+
 // Expected Output:
 // {"John": name, "teacher": job}
+
 // 5. Return Keys and Values. Write a program that takes an object and returns an array which contains two arrays: one for the keys of the object and the other for the values of the object.
 // Examples:
 // { a: 1, b: 2, c: 3 } ➞ [["a", "b", "c"], [1, 2, 3]]
 // {key: true} ➞ [["key"], [true]]
+
+const returnArr = (obj) => {
+  return [Object.keys(obj), Object.values(obj)];
+};
+
+console.log(returnArr({ a: 1, b: 2, c: 3 }));
+console.log(returnArr({ key: true }));
+
 // Binary converter, convert any given number to binary.
 // Bounce : your code should be using one line only
 // Example :
 // 20 -> 10100
 // 10-> 1010
 // 44-> 101100
+
+const convertBin = (num) => num.toString(2);
+
+console.log(convertBin(20));
+console.log(convertBin(10));
+console.log(convertBin(44));
+
 // A pandigital number contains all digits (0-9) at least once. Write a function that takes an integer, returning true if the integer is pandigital, and false otherwise.
 //isPandigital(0123456789) -> true
+
+const isPandigital = (num) => {
+  let a = num.toString();
+  let b = true;
+  for (let i = 0; i < a.length; i++) {
+    for (let j = 0; j <= 10; j++) {
+      if (a[i] !== j.toString()) {
+        b = false;
+      }
+    }
+  }
+  return b;
+};
+
+// const isPandigital2 = (num) => new Set(num.toString().split("")).size === 10;
+console.log(isPandigital(0123456789));
+console.log(isPandigital(98140723568910));
