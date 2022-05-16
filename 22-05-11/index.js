@@ -106,3 +106,5 @@ console.log(lg.brand);
 console.log(lg.info());
 
 // extends && super
+
+// test
