@@ -75,3 +75,55 @@ function AnimalsKrank(name, age, sickType) {
 const dog = new AnimalsKrank("Pfiffi", 7, "Kopfschmerzen");
 console.log(dog);
 dog.display();
+
+// class
+class Laptop {
+  constructor(model, price) {
+    this.model = model;
+    this.price = price;
+    // innerhalb
+    this.display = function () {
+      console.log(`this Laptop is ${this.model}, pricd at ${this.price}€`);
+    };
+  }
+  //außerhalb
+  priceUp() {
+    return (this.price *= 5);
+  }
+}
+const macBookPro = new Laptop("MacBookPro 14in", 2500);
+macBookPro.display();
+macBookPro.priceUp();
+macBookPro.display();
+
+// extends %% super
+class Keyboard extends Laptop {
+  constructor(model, price, color, lang, cable, display) {
+    super(model, price);
+    this.color = color;
+    this.lang = lang;
+    this.cable = cable;
+  }
+}
+const lg = new Keyboard("lg", 150, "black", "DE", false);
+lg.display("Keyboard");
+lg.priceUp();
+lg.display("Keyboard");
+
+// spread-operator
+
+const avg = (...numbers) =>
+  numbers.reduce((sum, value) => sum + value) / numbers.length;
+console.log(avg(3, 5, 9, 5, 8, 45, 3, 33));
+
+// in Arrays
+const arr1 = ["This ", "is "];
+const arr2 = ["cool "];
+const totalArray = [...arr1, ...arr2];
+console.log(totalArray);
+
+// spread in Objects comming soon
+
+// map
+
+for (let i = 0; i < arr1.length; i++) {}
