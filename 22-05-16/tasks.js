@@ -68,21 +68,15 @@ console.log(convertBin(44));
 //isPandigital(0123456789) -> true
 
 const isPandigital = (num) => {
-  let a = num.toString();
-  let b = true;
-  for (let i = 0; i < a.length; i++) {
-    for (let j = 0; j <= 10; j++) {
-      if (a[i] !== j.toString()) {
-        b = false;
-      }
-    }
-  }
-  return b;
+  let numToArr = num.toString().split("").sort();
+  let filteredArr = numToArr.filter((el, i) => numToArr.indexOf(el) == i);
+  return filteredArr.join("") == "0123456789";
 };
+console.log(isPandigital(45362718905));
+console.log(isPandigital(987654321100000007777));
+console.log(isPandigital(126789));
 
 // const isPandigital2 = (num) => new Set(num.toString().split("")).size === 10;
-console.log(isPandigital(0123456789));
-console.log(isPandigital(98140723568910));
 
 const arr1 = ["name", "age", "country"];
 const arr2 = ["Tom", 30, "Chile"];
