@@ -1,0 +1,15 @@
+{
+  "name": "22-05-18",
+  "version": "1.0.0",
+  "description": "Test App",
+  "main": "tasks.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Holger",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  }
+}
